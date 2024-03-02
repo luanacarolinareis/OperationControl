@@ -5,11 +5,11 @@
 }
 
 <style>
-    /* Adicione estilos personalizados */
     .custom-container {
         max-width: 400px;
         margin: auto;
         text-align: center;
+        margin-top: 80px;
     }
 
     .custom-form {
@@ -27,11 +27,11 @@
         width: 100%;
         padding: 10px;
         font-size: 16px;
-        margin-top: 10px;
+        margin-top: 30px;
     }
 
     .custom-heading {
-        font-size: 22px; /* Tamanho do texto para "Sign in to OperationControl" */
+        font-size: 25px; /* Tamanho do texto para "Sign in to OperationControl" */
         margin-bottom: 10px;
     }
 </style>
@@ -39,19 +39,20 @@
 <div class="custom-container">
     <div class="text-center">
         <h1 class="display-18 custom-heading">Sign in to OperationControl</h1>
+        <p>‎ </p>
     </div>
 
     <div class="custom-form">
         <form>
             <div class="form-group">
                 <label for="employeeId">Employee ID:</label>
-                <input type="text" class="form-control custom-input" id="employeeId" name="employeeId" placeholder="Enter your employee ID">
+                <input type="text" class="form-control custom-input" id="employeeId" name="employeeId" style="background-color:white; border-color:blue; color:black" placeholder="Enter your employee ID">
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" class="form-control custom-input" id="password" name="password" placeholder="Enter your password">
+                <input type="password" class="form-control custom-input" id="password" name="password" style="background-color:white; border-color:blue; color:black" placeholder="Enter your password">
             </div>
-            <button type="submit" class="btn btn-primary custom-button">Sign in</button>
         </form>
+        <a href="Desks"><button type="submit" class="btn btn-primary custom-button" id="signInButton">Sign in</button></a>
     </div>
 </div>

@@ -1,0 +1,51 @@
+﻿@page
+@model NoControl2Model
+
+@{
+    ViewData["Title"] = "Desks";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <script>
+        function toggleCheckbox(checkboxId) {
+            var oppositeCheckboxId = checkboxId.endsWith("yes") ? checkboxId.replace("no", "yes") : checkboxId.replace("yes", "no");
+            var oppositeCheckbox = document.getElementById(oppositeCheckboxId);
+            oppositeCheckbox.checked = false;
+        }
+    </script>
+</head>
+<body>
+    <h1 style="font-size: 64px;">Non Control Tools 2:</h1>
+    <form method="post">
+        <label for="instrument1" style="font-size: 24px;">Instrumento 1:</label>
+        <input type="checkbox" id="instrument1sim" name="instrument1" value="sim" onclick="toggleCheckbox(this.id)"> Sim
+        <input type="checkbox" id="instrument1nao" name="instrument1" value="nao" onclick="toggleCheckbox(this.id)"> Não<br>
+
+        <label for="instrument2" style="font-size: 24px;">Instrumento 2:</label>
+        <input type="checkbox" id="instrument2sim" name="instrument2" value="sim" onclick="toggleCheckbox(this.id)"> Sim
+        <input type="checkbox" id="instrument2nao" name="instrument2" value="nao" onclick="toggleCheckbox(this.id)"> Não<br>
+
+        <label for="instrument3" style="font-size: 24px;">Instrumento 3: </label>
+        <input type="checkbox" id="instrument3sim" name="instrument3" value="sim" onclick="toggleCheckbox(this.id)"> Sim
+        <input type="checkbox" id="instrument3nao" name="instrument3" value="nao" onclick="toggleCheckbox(this.id)"> Não<br>
+
+        <label for="instrument4" style="font-size: 24px;">Instrumento 4:</label>
+        <input type="checkbox" id="instrument4sim" name="instrument4" value="sim" onclick="toggleCheckbox(this.id)"> Sim
+        <input type="checkbox" id="instrument4nao" name="instrument4" value="nao" onclick="toggleCheckbox(this.id)"> Não<br>
+
+        <label for="instrument5" style="font-size: 24px;">Instrumento 5:</label>
+        <input type="checkbox" id="instrument5sim" name="instrument5" value="sim" onclick="toggleCheckbox(this.id)"> Sim
+        <input type="checkbox" id="instrument5nao" name="instrument5" value="nao" onclick="toggleCheckbox(this.id)"> Não<br>
+
+    </form>
+
+    <button type="submit">Enviar</button>
+</body>
+</html>
+
+

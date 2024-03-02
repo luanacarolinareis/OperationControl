@@ -16,5 +16,11 @@ namespace OperationControl.Pages
         {
 
         }
+        public IActionResult OnPost()
+        {
+            // Para efeitos de demonstração, o login não é verificado
+            return RedirectToPage("Desks");
+
+        }
     }
 }
