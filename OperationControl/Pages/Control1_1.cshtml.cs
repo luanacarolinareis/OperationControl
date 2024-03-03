@@ -5,8 +5,11 @@ namespace OperationControl.Pages
 {
     public class Control1_1Model : PageModel
     {
-        public void OnGet()
+        public int ToolCount { get; private set; }
+
+        public void OnGet(int toolCount)
         {
+            ToolCount = toolCount;
         }
     }
 }

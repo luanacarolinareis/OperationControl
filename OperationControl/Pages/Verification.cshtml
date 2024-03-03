@@ -1,0 +1,24 @@
+﻿@page
+@model OperationControl.Pages.VerificationModel
+@{
+    ViewData["Title"] = "Verification";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliation</title>
+</head>
+<body>
+    <div>
+        <h1>Avaliation</h1>
+        <p>@Model.AlertMessage</p>
+        <form method="post">
+            <input type="hidden" name="DeskIndex" value="@Model.DeskIndex" />
+            <button type="submit">OK</button>
+        </form>
+    </div>
+</body>
+</html>

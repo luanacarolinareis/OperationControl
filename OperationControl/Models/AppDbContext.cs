@@ -8,4 +8,5 @@ public class AppDbContext : DbContext
 
     public DbSet<Tools> ferramentas { get; set; }
     public DbSet<Desk> desks { get; set; }
+
 }

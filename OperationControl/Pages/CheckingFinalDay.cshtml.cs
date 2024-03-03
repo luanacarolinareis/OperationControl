@@ -1,57 +1,62 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using OperationControl.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace OperationControl.Pages
 {
     public class CheckingFinalDayModel : PageModel
     {
-    
-        [BindProperty]
-        public string SeriesNumber { get; set; }
+        private readonly AppDbContext _context;
 
-        [BindProperty]
-        public bool Checkbox1 { get; set; }
-
-        [BindProperty]
-        public bool Checkbox2 { get; set; }
-
-        [BindProperty]
-        public bool Checkbox3 { get; set; }
-
-        [BindProperty]
-        public bool Checkbox4 { get; set; }
-
-        [BindProperty]
-        public bool Checkbox5 { get; set; }
-
-        [BindProperty]
-        public bool Checkbox6 { get; set; }
-
-        [BindProperty]
-        public bool Checkbox7 { get; set; }
-
-        [BindProperty]
-        public bool Checkbox8 { get; set; }
-
-
-        public void OnGet()
+        public CheckingFinalDayModel(AppDbContext context)
         {
-            // Lógica para quando a página é carregada pela primeira vez
+            _context = context;
         }
 
-        public void OnPost()
+        [BindProperty]
+        public List<ToolCheckboxViewModel> Tools { get; set; }
+
+        public class ToolCheckboxViewModel
         {
-            // Aqui você pode acessar os valores inseridos no formulário
-            // que foram armazenados nas propriedades correspondentes do modelo
-            string numeroDeSerie = SeriesNumber;
-            bool okSelecionado = Checkbox1;
-            bool ausenteSelecionado = Checkbox2;
-            bool danificadoSelecionado = Checkbox3;
-            bool foraDeCalibracaoSelecionado = Checkbox4;
-
-            // Faça o que for necessário com esses valores, como salvá-los no banco de dados ou processá-los de outra forma
+            public int ToolId { get; set; }
+            public string ToolName { get; set; }
+            public string Estado { get; set; }
         }
-    
 
+        public async Task OnGetAsync(int deskIndex)
+        {
+            Tools = await _context.ferramentas
+                .Where(tool => tool.deskID == deskIndex)
+                .Select(tool => new ToolCheckboxViewModel
+                {
+                    ToolId = tool.numero,
+                    ToolName = tool.nome,
+                    Estado = tool.estado
+                })
+                .ToListAsync();
+        }
+
+        public async Task<IActionResult> OnPostAsync(int deskIndex)
+        {
+            foreach (var tool in Tools)
+            {
+                var toolToUpdate = await _context.ferramentas.FirstOrDefaultAsync(t => t.numero == tool.ToolId && t.deskID == deskIndex);
+                if (toolToUpdate != null)
+                {
+                    toolToUpdate.estado = tool.Estado;
+                }
+            }
+
+            await _context.SaveChangesAsync();
+
+            // Redirecionar para a página 
+            return RedirectToPage("Verification", new { deskIndex });
+        }
     }
 }
+
+

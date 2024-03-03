@@ -19,16 +19,16 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-color: #0d1017; /* Define a cor de fundo */
-    color: white; /* Define a cor do texto */
+    background-color: #0d1017;
+    color: white; 
 }
 
-/* Estilo para o texto da marca na barra de navegação */
+
 .navbar-brand {
-    color: #2e81f7 !important; /* Cor do texto desejada, !important para garantir prioridade */
+    color: #2e81f7 !important; 
 }
 
-/* Estilos para o texto na barra de navegação quando não está em foco ou ativo */
+
 .nav-link {
-    color: white; /* Cor do texto desejada */
+    color: white; 
 }

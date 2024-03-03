@@ -1,4 +1,26 @@
 ﻿@page
 @model OperationControl.Pages.Control1_1Model
-@{
-}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h2>Tool Inventory</h2>
+        <p>Insert the Id for the @Model.ToolCount tools.</p>
+        <form method="post">
+            @for (int i = 1; i <= Model.ToolCount; i++)
+            {
+                <label for="tool@i">Tool @i:</label>
+                <input type="text" id="tool@i" name="tool@i">
+                <br>
+            }
+
+        </form>
+        <a href="Desks"><button type="submit">Submit</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿@page
+@model OperationControl.Pages.KamishibaiModel
+@{
+    ViewData["Title"] = "Do the Kamishibai!";
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+
+    <form id="kamishibaiForm" method="post" action="desks" style="font-size: 18px;">
+        <label for="kamishibaiCheckbox">Have you already done it?</label>
+        <input type="checkbox" id="kamishibaiCheckbox" />
+
+    </form>
+    <a href="@Request.Headers["Referer"]"><button type="submit" id="submitButton" style="font-size: 18px;" disabled>Next</button></a>
+</div>
+<script>
+
+    var kamishibaiCheckbox = document.getElementById('kamishibaiCheckbox');
+    var submitButton = document.getElementById('submitButton');
+
+
+    kamishibaiCheckbox.addEventListener('change', function () {
+
+        if (kamishibaiCheckbox.checked) {
+            submitButton.disabled = false;
+        } else {
+            submitButton.disabled = true;
+        }
+    });
+</script>
