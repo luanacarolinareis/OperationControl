@@ -114,5 +114,5 @@ Abra uma issue ou envie um pull request para sugerir melhorias.
 
 ---
 
-OperationControl - Eficiência, rastreabilidade e segurança no controlo de procedimentos laboratoriais.  
-**Bugs N' Roses**
+> OperationControl - Eficiência, rastreabilidade e segurança no controlo de procedimentos laboratoriais.  
+> **Bugs N' Roses Team**
