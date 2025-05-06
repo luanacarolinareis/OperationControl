@@ -103,7 +103,7 @@ O sistema atualiza o estado das ferramentas e procedimentos na base de dados e g
 ## 📄 Documentação & Demonstração
 
 - [Relatório do Projeto](Relatório-OperationControl.pdf)
-- [Pitch de Apresentação](PPT-OperationControl.pdf)
+- [Pitch de Apresentação](PTT-OperationControl.pdf)
 
 ---
 
