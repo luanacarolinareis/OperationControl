@@ -8,7 +8,7 @@ OperationControl é uma aplicação web desenvolvida para centralizar e otimizar
 ## ✨ Funcionalidades Principais
 
 - **Autenticação de Utilizador**  
-  Login de utilizadores para garantir rastreabilidade e segurança das operações.
+  - Login de utilizadores para garantir rastreabilidade e segurança das operações.
 
 - **Verificação de Procedimentos**
   - Kamishibai: registo e confirmação da realização.
