@@ -1,0 +1,5 @@
+"numero","deskID","numeroSerie","nome","estado"
+"1","1","13412","Multimetro","Ok"
+"2","1","12678","Osciloscopio","Ausente"
+"3","3","31245","Termometro","Danificado"
+"4","2",NULL,"Pilhas","Ok"
